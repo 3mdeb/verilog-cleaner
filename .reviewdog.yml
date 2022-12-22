@@ -11,15 +11,15 @@ runner:
             - '%+G%.%#'
 
     verible-lint:
-        cmd: 'verible-verilog-lint $(find -L . -type f -name *.v) | cat'
+        cmd: 'verible-verilog-lint $(find -L . -type f -name \*.v) | cat'
         errorformat:
             - '%f:%l:%c: %m'
 
     verible-syntax:
-        cmd: 'verible-verilog-syntax $(find -L . -type f -name *.v)'
+        cmd: 'verible-verilog-syntax $(find -L . -type f -name \*.v)'
         errorformat:
             - '%f:%l:%c: %m'
 
-    verible-format:
-        cmd: 'verible-verilog-format --inplace $(find -L . -type f -name *.v) && git diff'
-        format: 'diff'
+              #verible-format:
+              #    cmd: 'verible-verilog-format --inplace $(find -L . -type f -name \*.v) && git diff'
+              #    format: 'diff'

@@ -32,4 +32,4 @@ command -v verible-verilog-lint \
     | grep -oP '\s*"browser_download_url":\s*"\K.*'$(lsb_release -r | cut -f 2)'.*(?=")' \
     | xargs curl -L | sudo tar xzf - -h --strip-components 1 -C /
 
-reviewdog -reporter=${INPUT_REPORTER-local} -diff='git diff' -runners=${INPUT_RUNNERS} -conf=${ACTION_PATH-.}/.reviewdog.yml ${DEBUG:+-tee}
+reviewdog -tee -reporter=${INPUT_REPORTER-local} -diff='git diff' -runners=${INPUT_RUNNERS} -conf=${ACTION_PATH-.}/.reviewdog.yml ${DEBUG:+-tee}
