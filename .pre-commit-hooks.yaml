@@ -1,0 +1,26 @@
+- id: verilator-lint
+  name: verilator-lint
+  description: "Checks the style of Verilog files using verilator linter"
+  entry: verilator/verilator:4.210
+  args: [--lint-only, -Wall, -Wpedantic]
+  language: docker_image
+  types: [verilog]
+- id: verible-verilog-lint
+  name: verible-verilog-lint
+  description: "Checks the style of Verilog files using verible-verilog-lint"
+  entry: verible-verilog-lint
+  language: docker
+  types: [verilog]
+- id: verible-verilog-syntax
+  name: verible-verilog-syntax
+  description: "Checks the syntax of Verilog files using verible-verilog-syntax"
+  entry: verible-verilog-syntax
+  language: docker
+  types: [verilog]
+- id: verible-verilog-format
+  name: verible-verilog-format
+  description: "Checks and adjusts the format of Verilog files using verible-verilog-format"
+  entry: verible-verilog-format
+  args: [--inplace]
+  language: docker
+  types: [verilog]
