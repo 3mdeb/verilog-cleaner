@@ -27,7 +27,7 @@ command -v verilator \
 
 ###### verible ######
 command -v verible-verilog-lint \
-    || curl -s https://api.github.com/repos/google/verible/releases/latest \
+    || curl -s https://api.github.com/repos/chipsalliance/verible/releases/latest \
     | grep -oP '\s*"browser_download_url":\s*"\K.*'$(lsb_release -r | cut -f 2)'.*(?=")' \
     | xargs curl -L | sudo tar xzf - -h --strip-components 1 -C /
 
